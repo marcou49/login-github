@@ -36,7 +36,7 @@ def github_callback():
                                authorization_response=request.url)
 
     response = make_response(redirect(url_for('profile')))  # redirect to the profile page
-    response.set_cookie("oauth_token", json.dumps(token), httponly=True, samesite='Strict')
+    response.set_cookie("oauth_token", json.dumps(token), httponly=True)
 
     return response
 
